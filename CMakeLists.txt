@@ -26,3 +26,4 @@ add_custom_target( cpfiles
 
 #Add dependencies
 add_dependencies(${PROG} cpfiles)
+
