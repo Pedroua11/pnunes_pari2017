@@ -51,6 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-#Temp files
+#Gedit temp files
 *~
 
