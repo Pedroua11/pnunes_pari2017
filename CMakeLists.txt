@@ -1,7 +1,7 @@
 #My CMakeLists.txt
 cmake_minimum_required (VERSION 2.8)
-project (Aula11)
-set(PROG aula11)
+project (Aula12)
+set(PROG aula12)
 
 #---------------------------------
 
@@ -10,6 +10,8 @@ add_executable(${PROG} ${SOURCES})
 
 #-----------------------------------------------
 #The recommended way to find packages automatically using PkgConfig
+find_package(OpenCV 2 REQUIRED)
+include_directories (${OpenCV_INCLUDE_DIRS})
 
 find_package(PkgConfig REQUIRED)  #necessary for next command to work
 pkg_check_modules(GTK REQUIRED gtk+-3.0)
