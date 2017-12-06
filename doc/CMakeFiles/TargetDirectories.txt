@@ -1,0 +1,4 @@
+/home/pedro/PARI/Aula_12/pnunes_pari2017/doc/CMakeFiles/edit_cache.dir
+/home/pedro/PARI/Aula_12/pnunes_pari2017/doc/CMakeFiles/rebuild_cache.dir
+/home/pedro/PARI/Aula_12/pnunes_pari2017/doc/CMakeFiles/cpfiles.dir
+/home/pedro/PARI/Aula_12/pnunes_pari2017/doc/CMakeFiles/aula12.dir

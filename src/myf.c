@@ -26,16 +26,6 @@ void InterceptCTRL_C(int a)
  * @param user_data - Custom data with the ID of another widget to check. In this case the switch1
  * @return void
  */
-void on_button3_clicked(GtkWidget * widget, gpointer user_data)
-{
-	   gboolean a=gtk_switch_get_active(GTK_SWITCH(user_data));
-	   if (a == FALSE) {
-			 printf("Must enable the Quit switch before leaving\n");
-	   } else {
-			 /*... missing code to terminate the gtk main loop ...*/
-			 gtk_main_quit();
-	   }
-}
 
 /**
  * @brief  Function to process the text from entry and label
@@ -133,4 +123,8 @@ void pari_RefreshDrawingArea( char * widgetName, IplImage *img)
         cairo_fill(cr);
         cairo_destroy(cr);
         g_object_unref(pix);  //free the pixbuf...
+}
+
+ pari_ProcessUserOperations(src_imageG, dst_imageG)
+{
 }

@@ -85,28 +85,6 @@ printf("pressed\n");
 
 
 
-void on_drawingarea1_scroll_event(GtkWidget *widget,   GdkEventScroll *event, gpointer user_data)
-        
-       
-{
-  switch(event->direction)
-        {
-                case GDK_SCROLL_UP:
-                        fontSizeFactorG+=0.1;  //increase factor
-                        break;
-
-                case GDK_SCROLL_DOWN:
-                        fontSizeFactorG-=0.1;  //decrease factor
-                        break;
-
-                case GDK_SCROLL_LEFT:
-                case GDK_SCROLL_RIGHT:
-                case GDK_SCROLL_SMOOTH:
-                        break;
-        }
-         gtk_widget_queue_draw(widget);  //force redraw the widget
-
-}
 
 
 
@@ -171,4 +149,14 @@ gboolean pari_UpdateImageAreas(gpointer data)
         return TRUE; //para rearmar o timeout
 }
 
+gboolean on_drawingarea1_expose_event(GtkWidget * widget, GdkEvent * event, gpointer user_data)
+{
+        pari_PerformImageAcquisition(captureG);             //acquire new image
+        pari_ProcessUserOperations(src_imageG, dst_imageG); // Perform here the openCV transformations
+
+        //update the drawing area displays
+        pari_RefreshDrawingArea("drawingarea1", src_imageG);
+        pari_RefreshDrawingArea("drawingarea2", dst_imageG);
+        return TRUE;
+}
 

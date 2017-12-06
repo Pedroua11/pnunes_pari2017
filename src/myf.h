@@ -1,10 +1,12 @@
+#ifndef _MYF_H
+#define _MYF_H
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <string.h>
 #include <cv.h>
 #include <highgui.h>
 
-GtkBuilder * builderG;
+
 #define MAXFFBUFFER 1000
 typedef struct {
   int count;
@@ -31,3 +33,4 @@ typedef struct {
 #endif
 
 #include "prototypes.h"
+#endif

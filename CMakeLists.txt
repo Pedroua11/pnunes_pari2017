@@ -12,9 +12,10 @@ add_executable(${PROG} ${SOURCES})
 #The recommended way to find packages automatically using PkgConfig
 find_package(OpenCV 2 REQUIRED)
 include_directories (${OpenCV_INCLUDE_DIRS})
+target_link_libraries(${PROG} m ${GTK_LIBRARIES} ${OpenCV_LIBS})
 
 find_package(PkgConfig REQUIRED)  #necessary for next command to work
-pkg_check_modules(GTK REQUIRED gtk+-3.0)
+pkg_check_modules(GTK REQUIRED gtk+-2.0)
 
 include_directories(${GTK_INCLUDE_DIRS})
 link_directories(${GTK_LIBRARY_DIRS})
